@@ -5,14 +5,29 @@ import Nav from '../Nav'
 import routes from '../routes'
 
 
-const  Header  = () =>{
-    return(
-        <header className= "header-main">
-            <div>
-                <Nav/>
-                {routes}
-            </div>
-        </header>
-    )
+class Header extends React.Component{
+
+    componentDidMount(){
+        this.props.getUserSession()
+    }
+
+    render(){
+        console.log("HEADER props: ", this.props)
+        
+        return <div>
+            {
+                (this.props.loading)
+                ?
+                <div>Loading...</div>
+                :<div>Welcome, {this.props.user.username}!</div>
+            }
+                    <Nav/>
+                    {routes}
+                </div>
+    }
 }
-export default Header
+
+const mapStateToProps = state => state;
+const mapDispatchToProps = {getUserSession}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Header)
