@@ -3,7 +3,8 @@ module.export={
         try {
             const db =req.app.get('db')
             const{user_id} = req.session.user
-            const cards = await db.cards.get_card(user_id)
+            const {bank} = req.params
+            const cards = await db.cards.select_cards(user_id, bank)
             res.status(200).send(tickets)            
         } catch (error) {
             console.log('error getting cards')
@@ -13,34 +14,32 @@ module.export={
     addCards: async(req,res,next)=>{
         try {
             const db = req.app.get('db')
-            const {name, type, annual_fee} = req.body
+            const {name, type, annual_fee,points,img,bank} = req.body
             const{user_id} = req.session.user
-            const cards = await db.cards.add_card({name,type,annual_fee,points,img,user_id})
+            const cards = await db.cards.add_cards({name,type,annual_fee,points,img,bank,user_id})
             res.status(200).send(cards)
         } catch (error) {
             console.log('error adding cards')
             res.status(500).send(error)
         }
     },
-    removeCards: async(req,res,next) =>{
+    deleteCards: async(req,res,next) =>{
         try {
             const db = req.app.get('db')
             const {id} = req.params
-            const{user_id} = req.session.user
-            const cards = await db.cards.remove_card
+            const cards = await db.cards.delete_cards($1)
             res.status(200).send(cards)
         } catch (error) {
             console.log('error removing cards')
             res.status(500).send(error)
         }
     },
-    editCards:async(req,res,next)=>{
+    updateCards:async(req,res,next)=>{
         try {
             const db = req.app.get('db')
             const{points} = req.query
             const{id} = req.params
-            const{card_id} = req.session.user
-            const cards = await db.cards.update_card({points, annual_fee, id, user_id})
+            const cards = await db.cards.update_cards([id, points])
             res.status(200).send(cards)  
         } catch (error) {
             console.log('error updating cards')

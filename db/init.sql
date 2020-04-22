@@ -17,5 +17,7 @@ CREATE TABLE cards(
     type VARCHAR(32),
     annual_fee INT,
     points INT,
-    img TEXT
+    img TEXT,
+    bank VARCHAR(20),
+    user_id INT REFERENCES  users(user_id)
 )

@@ -5,6 +5,7 @@ const massive = require('massive')
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const {login, register, logout, userSession} = require('./contorllers/authCtrl')
+const{getCards, addCards, deleteCards,updateCards} = require('./contorllers/cardsCtrl')
 
 const app = express()
 
@@ -34,23 +35,12 @@ app.get('/auth/user_session', userSession)
 
 //CARDS//
 //If doing for allbanks
-//app.get('/api/cards/:bank', getCards)
-//will need bank name at cards TABLE
-//Amex//
-app.get('/api/cards/amex', getCards)
-app.post('/api/addcards/amex', addCards)
-app.put('/api/editcards/amex/:id', editCards)
-app.delete('/api/deletecards/amex/:id', deleteCards)
-//Chase//
-app.get('/api/cards/chase', getCards)
-app.post('/api/addcards/chase', addCards)
-app.put('/api/editcards/chase/:id', editCards)
-app.delete('/api/deletecards/chase/:id', deleteCards)
-//Citi//
-app.get('/api/cards/citi', getCards)
-app.post('/api/addcards/citi', addCards)
-app.put('/api/editcards/citi/:id', editCards)
-app.delete('/api/deletecards/citi/:id', deleteCards)
+app.get('/api/cards/:bank', getCards)
+app.post('/api/addcards', addCards)
+app.put('/api/editcards/:id', updateCards)
+app.delete('/api/deletecards/:id', deleteCards)
+//will need bank name at cards TABLE , frontend
+
 
 
 app.listen(SERVER_PORT, ()=>{
