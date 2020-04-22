@@ -1,4 +1,4 @@
-module.export={
+module.exports={
     getCards: async(req,res, next)=>{
         try {
             const db =req.app.get('db')
