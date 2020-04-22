@@ -40,9 +40,9 @@ module.exports = {
         },
         logout:(req,res)=>{
             req.session.destroy()
-            res.sendStatus(200)
+            res.redirect('http://localhost:1688')
         },
         userSession:(req,res)=>{
-            res.status(200)/styleMedia(req.session.user)
+            res.status(200).send(req.session.user)
         }
 }
