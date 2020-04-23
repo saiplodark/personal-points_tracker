@@ -4,7 +4,7 @@ module.exports = {
     login: async(req, res) =>{
         const db = req.app.get('db')
         const {username, password} =  req.body
-        const foundUser = await db.select_user(username).catch(err => console.log(err))
+        const foundUser = await db.users.select_user(username).catch(err => console.log(err))
         if (!foundUser.length){
             res.status(401).send("User does not exist")
         }else{
@@ -23,14 +23,14 @@ module.exports = {
     register: async (req,res)=>{
         const db = req.app.get('db')
         const {username, password, email} = req.body
-        const foundUser = await db.select_user(username).catch(err=>consolee.log(err))
+        const foundUser = await db.users.select_user(username).catch(err=>consolee.log(err))
         if(foundUser.length){
             res.status(409).send('User exists, try the different username')
         }else{
             const saltRounds =12
             const salt = await bcrypt.genSalt(saltRounds)
             const hashedPassword = await bcrypt.hash(password, salt)
-            const createUser = await db.add_user([username, email, hashedPassword])
+            const createUser = await db.users.add_users([username, email, hashedPassword])
             req.session.user={
                 user_id:createUser[0].user_id,
                 username: createUser[0].username
@@ -38,7 +38,7 @@ module.exports = {
             res.status(200).send(req.session.user)
         }
         },
-        logout:(req,res)=>{
+        signout:(req,res)=>{
             req.session.destroy()
             res.redirect('http://localhost:1688')
         },

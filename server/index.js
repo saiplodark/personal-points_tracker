@@ -4,7 +4,7 @@ const session = require('express-session')
 const massive = require('massive')
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
-const {login, register, logout, userSession} = require('./contorllers/authCtrl')
+const {login, register, signout, userSession} = require('./contorllers/authCtrl')
 const{getCards, addCards, deleteCards,updateCards} = require('./contorllers/cardsCtrl')
 
 const app = express()
@@ -25,12 +25,12 @@ massive({
 }).then(db =>{
     app.set('db', db)
     console.log('db testing connected')
-}).catch(err => console.log('error, can not connect'))
+}).catch(err => console.log('error, can not connect',err))
 
 //AUTH//
 app.post('/auth/register', register)
 app.post('/auth/login', login)
-app.get('/auth/logout', logout)
+app.get('/auth/logout', signout)
 app.get('/auth/user_session', userSession)
 
 //CARDS//

@@ -13,6 +13,7 @@ export default function Nav(){
                 <Link to = '/amex' className='links'>Amex</Link>
                 <Link to = '/chase' className='links'>Chase</Link>
                 <Link to = '/citi' className='links'>Citi</Link>
+                <Link to = '/login' className='loginlink'>Sign In</Link>
             </div>
         </nav>
     </div>
