@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import {Redirect} from 'react-router-dom'
 
 export default class Login extends React.Component{
     constructor(){
@@ -8,7 +9,8 @@ export default class Login extends React.Component{
             username:'',
             password:'',
             email:'',
-            registerMode: false
+            registerMode: false,
+            redirect: false
         }
         this.login = this.login.bind(this)
         this.register = this.register.bind(this)
@@ -30,15 +32,23 @@ export default class Login extends React.Component{
         const {username, password} = this.state
         const user = await axios.post('/auth/login', {username, password})
         console.log("from login: ", user.data)
-    }
+        this.setState({redirect:true})
+        }
+    
 
     async register(){
         const {email, password, username} = this.state
         const user = await axios.post('/auth/register', {username, email, password})
         console.log("from register: ", user.data)
+        this.setState({redirect:true})
     }
 
     render(){
+
+        if(this.state.redirect){
+            return <Redirect to="/"/>
+        }
+
         return <div>
             {
                 (this.state.registerMode)

@@ -40,7 +40,8 @@ module.exports = {
         },
         signout:(req,res)=>{
             req.session.destroy()
-            res.redirect('http://localhost:1688')
+            res.sendStatus(200)
+            console.log(req.session)
         },
         userSession:(req,res)=>{
             res.status(200).send(req.session.user)

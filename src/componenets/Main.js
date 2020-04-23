@@ -1,8 +1,14 @@
 
 import React, { Component } from 'react'
+import  {connect} from 'react-redux'
+import {getUserSession} from '../redux/userReducer'
 
+ class Main extends Component{
 
-export default class Main extends Component{
+    componentDidMount(){
+        this.props.getUserSession()
+    }
+
     render(){
         return(
             <div>
@@ -11,3 +17,7 @@ export default class Main extends Component{
         )
     }
 }
+
+
+const mapStateToProps = state => state;
+export default connect(mapStateToProps, {getUserSession})(Main)

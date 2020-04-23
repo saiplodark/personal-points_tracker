@@ -30,7 +30,7 @@ massive({
 //AUTH//
 app.post('/auth/register', register)
 app.post('/auth/login', login)
-app.get('/auth/logout', signout)
+app.get('/auth/signout', signout)
 app.get('/auth/user_session', userSession)
 
 //CARDS//
