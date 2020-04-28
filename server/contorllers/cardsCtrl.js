@@ -1,27 +1,27 @@
 module.exports={
     getCards: async(req,res, next)=>{
-        try {
+        // try {
             const db =req.app.get('db')
             const{user_id} = req.session.user
             const {bank} = req.params
-            const cards = await db.cards.select_cards(user_id, bank)
-            res.status(200).send(tickets)            
-        } catch (error) {
-            console.log('error getting cards')
-            res.status(500).send(error)
-        }
+            const cards = await db.cards.select_cards(user_id)
+            res.status(200).send(cards)            
+        // } catch (error) {
+            // console.log('error getting cards')
+            // res.status(500).send(error)
+        // }
     },
     addCards: async(req,res,next)=>{
-        try {
+        // try {
             const db = req.app.get('db')
-            const {name, type, annual_fee,points,img,bank} = req.body
+            const {name,bank, type, annual_fee,points,img} = req.body
             const{user_id} = req.session.user
-            const cards = await db.cards.add_cards({name,type,annual_fee,points,img,bank,user_id})
+            const cards = await db.cards.add_cards([name,bank,type,annual_fee,points,img,user_id])
             res.status(200).send(cards)
-        } catch (error) {
-            console.log('error adding cards')
-            res.status(500).send(error)
-        }
+        // } catch (error) {
+        //     console.log('error adding cards')
+        //     res.status(500).send(error)
+        // }
     },
     deleteCards: async(req,res,next) =>{
         try {

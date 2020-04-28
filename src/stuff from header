@@ -1,3 +1,8 @@
         if(this.state.redirect){
             return <Redirect to="/"/>
         }
+
+
+        //takeout redirect stuffs in header
+//use users from redux state conditionally  signout only show when user logged in 
+//put redirect in bank components, it will be based of user, no user redirect to main page

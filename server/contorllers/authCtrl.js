@@ -14,6 +14,7 @@ module.exports = {
                     username:foundUser[0].username,
                     user_id: foundUser[0].user_id
                 }
+                console.log(req.session.user)
                 res.status(200).send(req.session.user)
             }else{
                 res.status(401).send("Something is wrong")
