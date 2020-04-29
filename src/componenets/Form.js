@@ -31,42 +31,52 @@ class Form extends Component{
             <div>
                 <form onSubmit={this.submitHandler}>
                 <span>
-                    <p>name</p>
+                    <label>Card name</label>
                     <input
                     type ="text"
                     name = "name"
                     value = {this.state.name}
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "Card name"/>
-                    <p>bank</p>
+                </span>
+                <span>
+                    <label>Bank</label>
                     <input
                     type ="text"
                     name = "bank"
                     value = {this.state.banl}
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "Bank"/>
-                    <p>type</p>
+                </span>
+                <span>
+                    <label>Type</label>
                     <input
                     type ="text"
                     name = "type"
                     value = {this.state.type}
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "Biz or Personal"/>
-                    <p>annaul fee</p>
+                </span>
+                <span>
+                    <label>Annual Fee</label>
                     <input
                     type ="number"
                     name = "annual_fee"
                     value = {this.state.annaul_fee}
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "Annual Fee"/>
-                    <p>points</p>
+                </span>
+                <span>
+                    <label>Points</label>
                     <input
                     type ="number"
                     name = "points"
                     value = {this.state.points}
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "Points"/>
-                    <p>img</p>
+                </span>
+                <span>
+                    <label>img</label>
                     <input
                     type ="text"
                     name = "img"

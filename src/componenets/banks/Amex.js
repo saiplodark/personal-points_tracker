@@ -49,11 +49,7 @@ class Amex extends Component{
 
     updateCards=(id)=>{
         axios.put(`/api/editcards/${id}`)
-        .then(({data})=>{
-            this.setState({
-                cards:data
-            })
-        })
+        .then(()=>this.getCards())
         .catch(err=>{
             console.log('edit failed')
         })
