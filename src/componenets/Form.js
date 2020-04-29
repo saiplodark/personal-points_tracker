@@ -13,21 +13,13 @@ class Form extends Component{
             img:''
         }
     }
-    componentDidMount(){
-        axios.get('/api/cards/:bank')
-        .then(({data})=>{
-            this.setState({
-                bank:data
-            })
-        })
-        .catch(err=>{
-            console.log('error getting bank', err)
-        })
-    }
+ 
     addCards=(e)=>{
         e.preventDefault()
-        const {name, type, annual_fee,points,img,bank} = this.state
-        axios.post('/api/addcards', {name,bank, type, annual_fee,points,img})
+        const {name, type, annual_fee,points,img} = this.state
+        const{bank}=this.props
+        const newCards = {name,bank,type,annual_fee,points,img}
+        axios.post('/api/addcards', newCards)
         .then(()=>{
             this.props.push()
         })
@@ -90,7 +82,7 @@ class Form extends Component{
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "image"/>
                 </span>
-                <button>add</button>
+                <button >add</button>
                 </form>
             </div>
         )

@@ -44,7 +44,11 @@ class Header extends React.Component{
                 <div>Loading...</div>
                 :<div>Welcome, {this.props.user.username}!</div>
             }
-            <Signout/>
+            {
+                this.props.user?
+                <Signout/>
+                :null
+            }
                     <Nav/>
                     {routes}
                 </div>

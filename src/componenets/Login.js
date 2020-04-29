@@ -57,7 +57,7 @@ export default class Login extends React.Component{
                     <input placeholder="Username" type="text" name="username" value={this.state.username} onChange={ e => this.changeHandler(e)}/>
                     <input placeholder="Password" type="password" name="password" value={this.state.password} onChange={ e => this.changeHandler(e)}/>
                     <button onClick={this.login}>Login</button>
-                    <button onClick={() => this.toggleRegisterMode()}>Create an account</button>
+                    {/* <button onClick={() => this.toggleRegisterMode()}>Create an account</button> */}
                 </div>
                 :
                 <div className="register">

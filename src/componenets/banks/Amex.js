@@ -15,11 +15,10 @@ class Amex extends Component{
             redirect:false
         }
     }
-
     componentDidMount(){
         console.log(this.props)
+        this.getCards()
     }
-
     getCards=()=>{
         if(this.state.user){
             axios.get('/api/cards/amex')
@@ -35,8 +34,6 @@ class Amex extends Component{
             return <Redirect to="/"/>
         }
     }
-
-    
     updateCards=(id)=>{
         axios.put('/api/editcards/${id}')
         .then(({data})=>{
@@ -48,14 +45,6 @@ class Amex extends Component{
             console.log('edit failed')
         })
     }
-
-    pointschanger=e=>{
-        const {value, points} = e.target
-        this.setState({
-            [points]: value
-        })
-    }
-
     deleteCards=(id)=>{
         axios.delete('/api/deletecards/${id}')
         .then(({data})=>{
@@ -78,11 +67,10 @@ class Amex extends Component{
             updateCard={this.updateCards}
             deleteCard={this.deleteCards}/>
             )
-
         return(
             <div className='cardslists' >
                 Testing Amex 
-                <Form/>
+                <Form bank='Amex'/>
                {mappedCards}
             </div>
         )
@@ -91,3 +79,5 @@ class Amex extends Component{
 
 const mapStateToProps = state => state;
 export default connect(mapStateToProps)(Amex)
+
+//amex re render, changing by states at amex
