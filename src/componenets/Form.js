@@ -12,20 +12,12 @@ class Form extends Component{
             points:'',
             img:''
         }
+        this.submitHandler=this.submitHandler.bind(this)
     }
- 
-    addCards=(e)=>{
+   
+  submitHandler(e){
         e.preventDefault()
-        const {name, type, annual_fee,points,img} = this.state
-        const{bank}=this.props
-        const newCards = {name,bank,type,annual_fee,points,img}
-        axios.post('/api/addcards', newCards)
-        .then(()=>{
-            this.props.push()
-        })
-        .catch(err=>{
-            console.log('failed to add card')
-        })
+        this.props.addCards(this.state)
     }
 
     changeHandler(e){
@@ -37,7 +29,7 @@ class Form extends Component{
     render(){
         return(
             <div>
-                <form onSubmit={this.addCards}>
+                <form onSubmit={this.submitHandler}>
                 <span>
                     <p>name</p>
                     <input

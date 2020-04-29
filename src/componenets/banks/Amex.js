@@ -34,8 +34,21 @@ class Amex extends Component{
             return <Redirect to="/"/>
         }
     }
+    addCards=(info)=>{
+        const {name, type, annual_fee,points,img} = info
+        const bank='amex'
+        const newCards = {name,bank,type,annual_fee,points,img}
+        axios.post('/api/addcards', newCards)
+        .then(()=>{
+            this.getCards()
+        })
+        .catch(err=>{
+            console.log('failed to add card')
+        })
+    }
+
     updateCards=(id)=>{
-        axios.put('/api/editcards/${id}')
+        axios.put(`/api/editcards/${id}`)
         .then(({data})=>{
             this.setState({
                 cards:data
@@ -46,12 +59,8 @@ class Amex extends Component{
         })
     }
     deleteCards=(id)=>{
-        axios.delete('/api/deletecards/${id}')
-        .then(({data})=>{
-            this.setState({
-                cards:data
-            })
-        })
+        axios.delete(`/api/deletecards/${id}`)
+        .then(()=>this.getCards())
         .catch(err=>{
             console.log('delete failed')
         })
@@ -60,17 +69,17 @@ class Amex extends Component{
     render(){
         let{redirect} = this.state
         let{user} = this.props
-        
+        console.log(this.state.cards)
         const mappedCards = this.state.cards.map(cards=><Cards
             key={cards.card_id}
             cards={cards}
             updateCard={this.updateCards}
             deleteCard={this.deleteCards}/>
             )
-        return(
-            <div className='cardslists' >
+            return(
+                <div className='cardslists' >
                 Testing Amex 
-                <Form bank='Amex'/>
+                <Form addCards={this.addCards}/>
                {mappedCards}
             </div>
         )
@@ -80,4 +89,4 @@ class Amex extends Component{
 const mapStateToProps = state => state;
 export default connect(mapStateToProps)(Amex)
 
-//amex re render, changing by states at amex
+//amex re render, changing by states

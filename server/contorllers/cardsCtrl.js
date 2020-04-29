@@ -27,10 +27,10 @@ module.exports={
         try {
             const db = req.app.get('db')
             const {id} = req.params
-            const cards = await db.cards.delete_cards($1)
+            const cards = await db.cards.delete_cards(id)
             res.status(200).send(cards)
         } catch (error) {
-            console.log('error removing cards')
+            console.log('error removing cards',error)
             res.status(500).send(error)
         }
     },
