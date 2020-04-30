@@ -4,7 +4,7 @@ module.exports={
             const db =req.app.get('db')
             const{user_id} = req.session.user
             const {bank} = req.params
-            const cards = await db.cards.select_cards(user_id)
+            const cards = await db.cards.select_cards([user_id,bank])
             res.status(200).send(cards)            
         // } catch (error) {
             // console.log('error getting cards')
@@ -50,8 +50,8 @@ module.exports={
         try {
             const db = req.app.get('db')
             const{user_id}=req.session.user
-            const{points}=req.params 
-            const cards=await db.cards.combine_points(user_id)
+            console.log(user_id)
+            const cards=await db.cards.total_points(user_id)
             res.status(200).send(cards)       
         } catch (error) {
             console.log('error getting points')

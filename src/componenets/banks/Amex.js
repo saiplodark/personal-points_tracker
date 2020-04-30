@@ -85,5 +85,3 @@ class Amex extends Component{
 
 const mapStateToProps = state => state;
 export default connect(mapStateToProps)(Amex)
-
-//amex re render, changing by states
