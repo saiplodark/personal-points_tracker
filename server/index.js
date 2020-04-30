@@ -5,7 +5,7 @@ const massive = require('massive')
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const {login, register, signout, userSession} = require('./contorllers/authCtrl')
-const{getCards, addCards, deleteCards,updateCards} = require('./contorllers/cardsCtrl')
+const{getCards, addCards, deleteCards,updateCards,combinePoints} = require('./contorllers/cardsCtrl')
 
 const app = express()
 
@@ -39,6 +39,8 @@ app.get('/api/cards/:bank', getCards)
 app.post('/api/addcards', addCards)
 app.put('/api/editcards/:id', updateCards)
 app.delete('/api/deletecards/:id', deleteCards)
+app.get('/api/cards/points', combinePoints)
+
 //will need bank name at cards TABLE , frontend
 
 

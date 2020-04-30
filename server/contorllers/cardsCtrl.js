@@ -45,5 +45,17 @@ module.exports={
             console.log('error updating cards')
             res.status(500).send(error)
         }
+    },
+    combinePoints:async(req,res,next)=>{
+        try {
+            const db = req.app.get('db')
+            const{user_id}=req.session.user
+            const{points}=req.params 
+            const cards=await db.cards.combine_points(user_id)
+            res.status(200).send(cards)       
+        } catch (error) {
+            console.log('error getting points')
+            res.status(500).send(error)
+        }
     }
 }

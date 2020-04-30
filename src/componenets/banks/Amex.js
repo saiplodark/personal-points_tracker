@@ -47,13 +47,14 @@ class Amex extends Component{
         })
     }
 
-    updateCards=(id)=>{
-        axios.put(`/api/editcards/${id}`)
+    updateCards=(id,points)=>{
+        axios.put(`/api/editcards/${id}?points=${points}`)
         .then(()=>this.getCards())
         .catch(err=>{
             console.log('edit failed')
         })
     }
+
     deleteCards=(id)=>{
         axios.delete(`/api/deletecards/${id}`)
         .then(()=>this.getCards())
