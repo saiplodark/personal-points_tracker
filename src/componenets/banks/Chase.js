@@ -85,3 +85,6 @@ class Chase extends Component{
 
 const mapStateToProps = state => state;
 export default connect(mapStateToProps)(Chase)
+
+//use reduce for points 
+//run reduce at

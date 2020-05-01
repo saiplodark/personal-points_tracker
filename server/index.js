@@ -39,7 +39,7 @@ app.get('/api/cards/:bank', getCards)
 app.post('/api/addcards', addCards)
 app.put('/api/editcards/:id', updateCards)
 app.delete('/api/deletecards/:id', deleteCards)
-app.get('/api/cards/points', combinePoints)
+app.get('/api/points', combinePoints)
 
 //will need bank name at cards TABLE , frontend
 

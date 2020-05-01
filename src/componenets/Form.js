@@ -39,7 +39,7 @@ class Form extends Component{
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "Card name"/>
                 </span>
-                <span>
+                {/* <span>
                     <label>Bank</label>
                     <input
                     type ="text"
@@ -47,7 +47,7 @@ class Form extends Component{
                     value = {this.state.banl}
                     onChange = {(e)=> this.changeHandler(e)}
                     placeholder = "Bank"/>
-                </span>
+                </span> */}
                 <span>
                     <label>Type</label>
                     <input
