@@ -1,13 +1,12 @@
 import React from 'react'
 import{Link} from 'react-router-dom'
+import './Nav.scss'
 
 export default function Nav(){
     return<div>
         <nav className='nav'>
-            <div>
-                <Link to ="/">
-                    Points Tracker
-                </Link>
+            <div className="main">
+                <Link to ="/">Points Tracker</Link>
             </div>
             <div className='link-wraps'>
                 <Link to = '/amex' className='links'>Amex</Link>

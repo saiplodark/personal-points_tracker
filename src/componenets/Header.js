@@ -6,6 +6,7 @@ import routes from '../routes'
 import axios from 'axios'
 // import {Redirect} from 'react-router-dom'
 import Signout from './Signout'
+import './Header.scss'
 
 
 class Header extends React.Component{
