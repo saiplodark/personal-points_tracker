@@ -76,8 +76,8 @@ class Chase extends Component{
             return(
                 <div className='cardslists' >
                     Testing Chase
-                <Form addCards={this.addCards}/>
                {mappedCards}
+                <Form addCards={this.addCards}/>
             </div>
         )
     }

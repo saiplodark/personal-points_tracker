@@ -76,8 +76,8 @@ class Amex extends Component{
             return(
                 <div className='cardslists' >
                 Testing Amex 
-                <Form addCards={this.addCards}/>
                {mappedCards}
+                <Form addCards={this.addCards}/>
             </div>
         )
     }
