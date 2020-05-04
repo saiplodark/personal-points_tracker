@@ -59,7 +59,7 @@ class Header extends React.Component{
             }
             {
                 this.props.user?
-                <Signout/>
+                <Signout className='so'/>
                 :null
             }
                     <Nav/>

@@ -1,12 +1,8 @@
-div {
+button {
+  background-color: black;
+  color: blanchedalmond;
   font-size: 15px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-Nav {
-  background-color: red;
+  font-family: 'Pacifico', cursive;
 }
 
 @media screen and (max-width: 750px) {

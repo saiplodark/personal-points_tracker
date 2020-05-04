@@ -45,8 +45,8 @@ import "./Main.scss"
         return(
             <div className="mainclass">
                 <h1>Your total points is {this.state.points}</h1>
-                <h2>Your total cash worth is {cash} $USD</h2>
-                <h3>Your total travel worth is {travel} $USD</h3>
+                <h2>The cash worth is {cash} $USD</h2>
+                <h3>The  travel worth is {travel} $USD</h3>
             </div>
         )
     }

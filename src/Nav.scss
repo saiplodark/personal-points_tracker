@@ -10,10 +10,15 @@
 }
 .main{
     // background-color: seagreen;
-    width: 15%;
+    color: blue;
+    width: 20%;
     font-size: 25px;
     font-family: 'Pacifico', cursive;
     font-weight: bolder;
+    display: flex;
+    margin-left: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .link-wraps{

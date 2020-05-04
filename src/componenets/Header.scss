@@ -1,10 +1,9 @@
-div{
-    font-size: 15px;
-    justify-content: space-between;
-}
 
-Nav{
-    background-color: red;
+button{
+    background-color: black;
+    color: blanchedalmond;
+    font-size: 15px;
+    font-family: 'Pacifico', cursive;
 }
 
 @media screen and (max-width:750px){
@@ -24,7 +23,6 @@ Nav{
     .show{
         transform: translate(0,0);
       }
-
     button{
         display: flex;
     position: absolute;
