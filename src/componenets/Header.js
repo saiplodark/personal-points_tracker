@@ -9,6 +9,7 @@ import Signout from './Signout'
 import './Header.scss'
 
 
+
 class Header extends React.Component{
 
     constructor(){
@@ -17,7 +18,16 @@ class Header extends React.Component{
             username:'',
             password:'',
             email:'',
+            toggleSideBar:false
         }
+    }
+
+    toggleSideBarFunc(){
+        this.setState((prevState)=>{
+            return{
+                toggleSideBar: !prevState.toggleSideBar
+            }
+        })
     }
 
     componentDidMount(){
@@ -39,6 +49,8 @@ class Header extends React.Component{
         //     return <Redirect to="/"/>
         // }
         return <div>
+            <button onClick={()=>this.toggleSideBarFunc()}>Menu</button>
+                    <nav className={this.state.toggleSideBar? "show":""}></nav>
             {
                 (this.props.loading)
                 ?

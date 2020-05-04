@@ -6,3 +6,35 @@ div{
 Nav{
     margin-right: 20px;
 }
+
+@media screen and (max-width:750px){
+    Nav{
+        width: 100vw;
+        height: 300px;
+        min-height: 30vh;
+         background-color:blue ; 
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translate(0,-550px);
+        transition: 0.5s;
+        transition-timing-function: ease-in-out;
+        font-size: 15px;
+    }
+    .show{
+        transform: translate(0,0);
+      }
+
+    button{
+        display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 25px;
+    height: 40px;
+    width: 100px;
+    z-index: 1;
+    background-color: khaki;
+    font-size: 20px;
+    }
+}

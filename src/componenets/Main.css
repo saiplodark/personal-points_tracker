@@ -1,0 +1,24 @@
+body {
+  background: radial-gradient(ellipse, black, grey, white);
+}
+
+.mainclass {
+  margin-top: 100px;
+  background: radial-gradient(red, purple);
+  color: whitesmoke;
+}
+
+div {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2, h3 {
+  font-size: 25px;
+}
+/*# sourceMappingURL=Main.css.map */

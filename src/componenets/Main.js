@@ -40,11 +40,13 @@ import "./Main.scss"
         }
     render(){
         console.log(this.state.points)
+        const cash = (this.state.points)*0.01
+        const travel =  (this.state.points)*0.016
         return(
             <div className="mainclass">
                 <h1>Your total points is {this.state.points}</h1>
-                <h2>Your total points worth for cash</h2>
-                <h3>Your total points worth for travel</h3>
+                <h2>Your total cash worth is {cash} $USD</h2>
+                <h3>Your total travel worth is {travel} $USD</h3>
             </div>
         )
     }
