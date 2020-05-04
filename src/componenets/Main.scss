@@ -1,17 +1,35 @@
+$grayblue :  rgba(81, 113, 150, 0.591);
+$silvergold:rgba(228, 226, 162, 0.892);
+
 body{
-    background:radial-gradient( ellipse,black,grey,white)
+   height: 100vh;
+    background: linear-gradient(to top left,whitesmoke,silver,grey, $grayblue,black,$grayblue,grey,silver,whitesmoke);
+    margin-top: 20px; 
+	// display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+	// align-items: center;
 }
 
 .mainclass{
-    margin-top: 100px;
-background: radial-gradient(red,purple);
-color: whitesmoke;
-    
+margin-left: auto;
+margin-right: auto;
+margin-top: 10vh;
+width: 650px;
+height: 650px;
+border-radius: 80%;
+background: radial-gradient(circle,black,blue,purple,red);
+color: $silvergold;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
-div{
-    justify-content: center;
-    
-}
+
+// @keyframes spinner{
+//     0%{transform: rotate(0deg);}
+//     100%{transform: rotate(360deg);}
+// }
+
 h1{
     font-size: 40px;
 }

@@ -5,11 +5,11 @@ export default function Cards(props){
     let{card_id,name, type, annual_fee,img} =props.cards
     const [points, newpoints] = useState(props.cards.points)
     return<div>
+        <img src={img} alt="cards pics"/>
         <span>Card:{name}</span>
         <span>Type:{type}</span>
         <span>Fee:${annual_fee}</span>
         <span>Points:{props.cards.points}</span>
-        <img src={img} alt="cards pics"/>
         <button onClick={()=>props.updateCard(card_id,points)}>Edit</button>
         <input name='points' placeholder='newpoints' onChange={(event)=>{
             newpoints(event.target.value)

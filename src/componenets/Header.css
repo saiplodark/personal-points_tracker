@@ -1,12 +1,12 @@
 div {
   font-size: 15px;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 Nav {
-  margin-right: 20px;
+  background-color: red;
 }
 
 @media screen and (max-width: 750px) {
