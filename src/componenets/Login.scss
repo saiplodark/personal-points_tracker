@@ -1,0 +1,45 @@
+.auth{
+    display: flex;
+    flex-direction: column;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input{
+        margin-top: 20vh;
+        background-color: black;
+        font-size: 50px;
+        color: whitesmoke;
+    }
+    button{
+        font-size: 30px;
+        margin-top: 10vh;
+    }
+    input:hover{
+        background-color:rgba(230, 232, 204, 0.865);
+        color:darkblue;
+    }
+    button:hover{
+        background-color: whitesmoke;
+        color: darkgray;
+    }
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input{
+        margin-top: 15vh;
+        background-color: black;
+        font-size: 50px;
+        color: whitesmoke;
+    }
+    button{
+        font-size: 30px;
+        margin-top: 15px;
+    }
+}

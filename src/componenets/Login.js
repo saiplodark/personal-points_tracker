@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import {Redirect} from 'react-router-dom'
+import './Login.scss'
 
 export default class Login extends React.Component{
     constructor(){
@@ -49,7 +50,7 @@ export default class Login extends React.Component{
             return <Redirect to="/"/>
         }
 
-        return <div>
+        return <div className='auth'>
             {
                 (this.state.registerMode)
                 ?

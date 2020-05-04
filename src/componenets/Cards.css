@@ -1,4 +1,5 @@
 .cards {
+  margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8,25 +9,28 @@
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-}
-
-.img {
-  max-width: 250px;
-  max-height: 250px;
-}
-
-.cards input {
-  width: 60px;
-  height: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .cards span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22px;
+  font-family: cursive;
   font-weight: bold;
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
   color: red;
 }
 
@@ -34,5 +38,15 @@
   width: 60px;
   height: 30px;
   background-color: blue;
+}
+
+.cards input {
+  width: 60px;
+  height: 30px;
+}
+
+.img {
+  max-width: 250px;
+  max-height: 180px;
 }
 /*# sourceMappingURL=Cards.css.map */

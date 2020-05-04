@@ -48,7 +48,7 @@ class Header extends React.Component{
         // if(this.signout){
         //     return <Redirect to="/"/>
         // }
-        return <div>
+        return <div className='header'>
             <button onClick={()=>this.toggleSideBarFunc()}>Menu</button>
                     <nav className={this.state.toggleSideBar? "show":""}></nav>
             {
