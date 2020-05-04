@@ -2,6 +2,7 @@ require ('dotenv').config()
 const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
+const path = require('path');
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const {login, register, signout, userSession} = require('./contorllers/authCtrl')
@@ -18,6 +19,7 @@ app.use(session({
         maxAge: 1000*60*60*24*14
     }
 }))
+app.use( express.static( `${__dirname}/../build` ) );
 
 massive({
     connectionString:CONNECTION_STRING,
@@ -26,6 +28,10 @@ massive({
     app.set('db', db)
     console.log('db testing connected')
 }).catch(err => console.log('error, can not connect',err))
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 //AUTH//
 app.post('/auth/register', register)
