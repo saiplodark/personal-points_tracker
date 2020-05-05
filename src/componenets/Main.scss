@@ -3,7 +3,7 @@ $silvergold:rgba(228, 226, 162, 0.892);
 
 body{
    height: 100vh;
-    background: linear-gradient(to top left,whitesmoke,silver,grey, $grayblue,black,$grayblue,grey,silver,whitesmoke);
+    background: linear-gradient(to top left,black,$grayblue,grey,whitesmoke,grey,$grayblue,black);
     margin-top: 20px; 
 	// display: flex;
     // flex-direction: column;
@@ -18,17 +18,20 @@ margin-top: 10vh;
 width: 650px;
 height: 650px;
 border-radius: 80%;
-background: radial-gradient(circle,black,blue,purple,red);
+background: radial-gradient(circle,black,darkblue,$grayblue,black);
+// background-repeat: no-repeat;
+// background-image: url('https://webstockreview.net/images/clipart-bike-fallen-5.png');
 color: $silvergold;
 display: flex;
 flex-direction: column;
 justify-content: center;
+animation: spinner 10s infinite;
 }
 
-// @keyframes spinner{
-//     0%{transform: rotate(0deg);}
-//     100%{transform: rotate(360deg);}
-// }
+@keyframes spinner{
+    0%{transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
 
 h1{
     font-size: 40px;

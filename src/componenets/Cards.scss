@@ -1,5 +1,7 @@
 .cards{
     margin-top: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -27,4 +29,40 @@
 .img{
     max-width: 250px;
     max-height: 180px;
+}
+
+@media screen and (max-width:767px){
+    .cards{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items:center;
+    span{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-family: cursive;
+        font-weight: bold;
+        color: blue;
+    }
+    p{
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        font-family: cursive;
+        font-weight: bold;
+        color: blue;
+    }
+    button{
+        width: 60px;
+        height: 30px;
+        background-color: red;
+    }
+}
 }

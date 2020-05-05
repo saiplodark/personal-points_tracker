@@ -1,12 +1,11 @@
 .nav{
     // background-color: red;
-    width: 100vw;
+    width: 90vw;
     display: flex;
     flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	align-items:center;
-	align-content: stretch;
 }
 .main{
     // background-color: seagreen;
@@ -16,7 +15,7 @@
     font-family: 'Pacifico', cursive;
     font-weight: bolder;
     display: flex;
-    margin-left: 20px;
+    margin-left: 5vw;
     justify-content: flex-start;
     align-items: flex-start;
 }
@@ -29,5 +28,18 @@
     justify-content: space-around;
     font-family: 'Pacifico', cursive;
     font-size: 20px;
+    text-decoration:none;
+}
+.links{
+    text-decoration: none;
+    color: red;
 }
 
+@media screen and (max-width:767px){
+    // .links{
+    //     flex-direction: column;
+    //     position: absolute;
+    //     height: 300px;
+    //     padding: 90px;
+    // }
+}

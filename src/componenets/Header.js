@@ -7,7 +7,7 @@ import axios from 'axios'
 // import {Redirect} from 'react-router-dom'
 import Signout from './Signout'
 import './Header.scss'
-
+import{Link} from 'react-router-dom'
 
 
 class Header extends React.Component{
@@ -33,8 +33,6 @@ class Header extends React.Component{
     componentDidMount(){
         this.props.getUserSession()
     }
-
-
     // async signout(){
     //     const {username, password} = this.state
     //     const user = await axios.get('/auth/signout', {username, password})
@@ -49,8 +47,18 @@ class Header extends React.Component{
         //     return <Redirect to="/"/>
         // }
         return <div className='header'>
-            <button onClick={()=>this.toggleSideBarFunc()}>Menu</button>
-                    <nav className={this.state.toggleSideBar? "show":""}></nav>
+            <button className='menu' onClick={()=>this.toggleSideBarFunc()}>Menu</button>
+                    <nav className={this.state.toggleSideBar? "show":"hide"}>
+            <div className="main">
+                <Link to ="/">Points Tracker</Link>
+            </div>
+            <div className='link-wraps'>
+                <Link to = '/amex' className='links'>Amex</Link>
+                <Link to = '/chase' className='links'>Chase</Link>
+                <Link to = '/citi' className='links'>Citi</Link>
+                <Link to = '/login' className='loginlink'>Sign In</Link>
+    </div>
+                    </nav>
             {
                 (this.props.loading)
                 ?

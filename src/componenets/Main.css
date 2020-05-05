@@ -1,7 +1,7 @@
 body {
   height: 100vh;
-  background: -webkit-gradient(linear, right bottom, left top, from(whitesmoke), color-stop(silver), color-stop(grey), color-stop(rgba(81, 113, 150, 0.591)), color-stop(black), color-stop(rgba(81, 113, 150, 0.591)), color-stop(grey), color-stop(silver), to(whitesmoke));
-  background: linear-gradient(to top left, whitesmoke, silver, grey, rgba(81, 113, 150, 0.591), black, rgba(81, 113, 150, 0.591), grey, silver, whitesmoke);
+  background: -webkit-gradient(linear, right bottom, left top, from(black), color-stop(rgba(81, 113, 150, 0.591)), color-stop(grey), color-stop(whitesmoke), color-stop(grey), color-stop(rgba(81, 113, 150, 0.591)), to(black));
+  background: linear-gradient(to top left, black, rgba(81, 113, 150, 0.591), grey, whitesmoke, grey, rgba(81, 113, 150, 0.591), black);
   margin-top: 20px;
 }
 
@@ -12,7 +12,7 @@ body {
   width: 650px;
   height: 650px;
   border-radius: 80%;
-  background: radial-gradient(circle, black, blue, purple, red);
+  background: radial-gradient(circle, black, darkblue, rgba(81, 113, 150, 0.591), black);
   color: rgba(228, 226, 162, 0.892);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,6 +24,30 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-animation: spinner 10s infinite;
+          animation: spinner 10s infinite;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 h1 {

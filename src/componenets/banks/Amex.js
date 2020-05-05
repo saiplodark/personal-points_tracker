@@ -4,6 +4,7 @@ import {Link, Redirect}from'react-router-dom'
 import {connect} from 'react-redux'
 import Cards from '../Cards'
 import Form from '../Form'
+// import './Amex.scss'
 
 
 class Amex extends Component{
@@ -12,7 +13,8 @@ class Amex extends Component{
         this.state={
             user:{},
             cards:[],
-            redirect:false
+            redirect:false,
+            totalpoints:0
         }
     }
     componentDidMount(){
@@ -26,6 +28,7 @@ class Amex extends Component{
                 this.setState({
                     cards:data
                 })
+                this.gettotalPoints()
             })
             .catch(err=>{
                 console.log('can not read cards')
@@ -62,6 +65,12 @@ class Amex extends Component{
             console.log('delete failed')
         })
     }
+    gettotalPoints=()=>{
+        let total = this.state.cards.reduce((acc,curr)=>{
+            return acc + parseInt(curr.points)
+        },0)
+        this.setState({totalpoints:total})
+    }
 
     render(){
         let{redirect} = this.state
@@ -75,8 +84,10 @@ class Amex extends Component{
             )
             return(
                 <div className='cardslists' >
-                Testing Amex 
+                <h1>{this.state.totalpoints}</h1>
+                <span>
                {mappedCards}
+                </span>
                 <Form addCards={this.addCards}/>
             </div>
         )

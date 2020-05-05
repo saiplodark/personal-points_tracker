@@ -11,15 +11,12 @@ export default function Cards(props){
         <span>Type:{type}</span>
         <span>Fee:${annual_fee}</span>
         <span>Points:{props.cards.points}</span>
-        <span className= 'ed'>
+        <p className= 'ed'>
         <input name='points' placeholder='newpoints' onChange={(event)=>{
             newpoints(event.target.value)
         }}/>
         <button onClick={()=>props.updateCard(card_id,points)}>Update</button>
         <button onClick={()=>props.deleteCard(card_id)}>Delete</button>
-        </span>
+        </p>
         </div>
 }
-
-// state  newpoints , input box  states
-//change  class componenet 

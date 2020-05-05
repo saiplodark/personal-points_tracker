@@ -1,5 +1,5 @@
 .nav {
-  width: 100vw;
+  width: 90vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -15,8 +15,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
 }
 
 .main {
@@ -28,7 +26,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 20px;
+  margin-left: 5vw;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -50,5 +48,11 @@
       justify-content: space-around;
   font-family: 'Pacifico', cursive;
   font-size: 20px;
+  text-decoration: none;
+}
+
+.links {
+  text-decoration: none;
+  color: red;
 }
 /*# sourceMappingURL=Nav.css.map */

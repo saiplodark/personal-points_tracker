@@ -1,0 +1,20 @@
+form{
+    // background-color: purple;
+    margin-left: auto;
+    margin-right: auto;
+    height: 20vh;
+    width: 80vw;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media screen and (max-width:767px){
+    form{
+        display: flex;
+        flex-direction: column;
+        color: black;
+    }
+}

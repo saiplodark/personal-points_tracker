@@ -1,5 +1,6 @@
 import React , {Component} from 'react'
 import axios from 'axios'
+import './Form.scss'
 
 class Form extends Component{
     constructor(props){

@@ -26,7 +26,7 @@ class Signout extends React.Component{
                 return<Redirect to='/'/>
             }
         
-        return<div>
+        return<div className="out">
             <button onClick={this.signout} >Signout</button>
         </div>
     }

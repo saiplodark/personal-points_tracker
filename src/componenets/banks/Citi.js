@@ -75,7 +75,7 @@ class Citi extends Component{
             )
             return(
                 <div className='cardslists' >
-                    Testing Citi
+                Testing Citi
                {mappedCards}
                 <Form addCards={this.addCards}/>
             </div>

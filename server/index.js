@@ -2,7 +2,7 @@ require ('dotenv').config()
 const express = require('express')
 const session = require('express-session')
 const massive = require('massive')
-const path = require('path');
+const path = require('path')
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const {login, register, signout, userSession} = require('./contorllers/authCtrl')
@@ -10,6 +10,7 @@ const{getCards, addCards, deleteCards,updateCards,combinePoints} = require('./co
 
 const app = express()
 
+app.use( express.static( `${__dirname}/../build` ) );
 app.use(express.json())
 app.use(session({
     secret:SESSION_SECRET,
@@ -19,7 +20,6 @@ app.use(session({
         maxAge: 1000*60*60*24*14
     }
 }))
-app.use( express.static( `${__dirname}/../build` ) );
 
 massive({
     connectionString:CONNECTION_STRING,
@@ -29,9 +29,6 @@ massive({
     console.log('db testing connected')
 }).catch(err => console.log('error, can not connect',err))
 
-app.get('*', (req, res)=>{
-    res.sendFile(path.join(__dirname, '../build/index.html'));
-});
 
 //AUTH//
 app.post('/auth/register', register)
@@ -49,6 +46,9 @@ app.get('/api/points', combinePoints)
 
 //will need bank name at cards TABLE , frontend
 
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 
 app.listen(SERVER_PORT, ()=>{
