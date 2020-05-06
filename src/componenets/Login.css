@@ -67,4 +67,17 @@
   background-color: whitesmoke;
   color: darkgray;
 }
+
+@media screen and (max-width: 767px) {
+  .register button {
+    background-color: white;
+    font-size: 30px;
+    height: 100px;
+  }
+  .login button {
+    background-color: white;
+    font-size: 30px;
+    height: 100px;
+  }
+}
 /*# sourceMappingURL=Login.css.map */
