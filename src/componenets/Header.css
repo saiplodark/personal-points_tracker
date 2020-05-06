@@ -1,3 +1,9 @@
+.loginlink {
+  font-size: 30px;
+  text-decoration: none;
+  color: red;
+}
+
 button {
   background-color: black;
   color: blanchedalmond;
@@ -62,6 +68,7 @@ button {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    margin-right: 50px;
     position: absolute;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -76,6 +83,11 @@ button {
     background-color: khaki;
     color: black;
     font-size: 25px;
+  }
+  .loginlink {
+    text-decoration: none;
+    color: orange;
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=Header.css.map */

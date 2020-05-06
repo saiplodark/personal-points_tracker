@@ -1,0 +1,35 @@
+@-webkit-keyframes cc {
+  0% {
+    color: blue;
+  }
+  25% {
+    color: purple;
+  }
+  50% {
+    color: blueviolet;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+@keyframes cc {
+  0% {
+    color: blue;
+  }
+  25% {
+    color: purple;
+  }
+  50% {
+    color: blueviolet;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+/*# sourceMappingURL=mixins.css.map */

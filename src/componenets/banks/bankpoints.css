@@ -1,0 +1,44 @@
+@-webkit-keyframes cc {
+  0% {
+    color: blue;
+  }
+  25% {
+    color: purple;
+  }
+  50% {
+    color: blueviolet;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+@keyframes cc {
+  0% {
+    color: blue;
+  }
+  25% {
+    color: purple;
+  }
+  50% {
+    color: blueviolet;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: red;
+  }
+}
+
+.bp {
+  -webkit-animation: cc 5s;
+          animation: cc 5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  font-size: 30px;
+}
+/*# sourceMappingURL=bankpoints.css.map */

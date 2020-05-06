@@ -1,12 +1,16 @@
+%dfg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .auth{
     display: flex;
     flex-direction: column;
 }
 .login{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@extend %dfg;
     input{
         margin-top: 20vh;
         background-color: black;
@@ -28,10 +32,7 @@
 }
 
 .register{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @extend %dfg;
     input{
         margin-top: 15vh;
         background-color: black;

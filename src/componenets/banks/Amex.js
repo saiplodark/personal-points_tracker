@@ -4,7 +4,7 @@ import {Link, Redirect}from'react-router-dom'
 import {connect} from 'react-redux'
 import Cards from '../Cards'
 import Form from '../Form'
-// import './Amex.scss'
+import './bankpoints.scss'
 
 
 class Amex extends Component{
@@ -84,7 +84,7 @@ class Amex extends Component{
             )
             return(
                 <div className='cardslists' >
-                <h1>{this.state.totalpoints}</h1>
+                <h1 className='bp'>MR:{this.state.totalpoints}</h1>
                 <span>
                {mappedCards}
                 </span>

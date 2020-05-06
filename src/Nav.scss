@@ -1,3 +1,4 @@
+
 .nav{
     // background-color: red;
     width: 90vw;
@@ -9,7 +10,7 @@
 }
 .main{
     // background-color: seagreen;
-    color: blue;
+    margin-left: 10vw;
     width: 20%;
     font-size: 25px;
     font-family: 'Pacifico', cursive;
@@ -19,7 +20,9 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
-
+// .links{
+//     text-decoration: none;
+// }
 .link-wraps{
     // background-color: yellow;
     width: 40%;
@@ -27,19 +30,18 @@
     flex-direction: row;
     justify-content: space-around;
     font-family: 'Pacifico', cursive;
-    font-size: 20px;
     text-decoration:none;
 }
 .links{
     text-decoration: none;
+    font-size: 30px;
     color: red;
 }
 
 @media screen and (max-width:767px){
-    // .links{
-    //     flex-direction: column;
-    //     position: absolute;
-    //     height: 300px;
-    //     padding: 90px;
-    // }
+    .links{
+        text-decoration: none;
+        font-size: 20px;
+        color: orange;
+    }
 }

@@ -1,0 +1,6 @@
+@import '../../styles/mixins.scss';
+
+.bp{
+    @include total;
+    font-size: 30px;
+}

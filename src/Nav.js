@@ -6,7 +6,7 @@ export default function Nav(){
     return<div>
         <nav className='nav'>
             <div className="main">
-                <Link to ="/">Points Tracker</Link>
+                <Link to ="/" className='links'>Points Tracker</Link>
             </div>
             <div className='link-wraps'>
                 <Link to = '/amex' className='links'>Amex</Link>

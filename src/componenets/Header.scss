@@ -1,4 +1,8 @@
-
+.loginlink{
+    font-size: 30px;
+    text-decoration: none;
+    color: red;
+}
 
 button{
     background-color: black;
@@ -48,6 +52,7 @@ button{
     }
     .menu{
         display: flex;
+        margin-right: 50px;
         position: absolute;
         justify-content: center;
         align-items: center;
@@ -58,5 +63,10 @@ button{
         background-color: khaki;
         color: black;
         font-size: 25px;
+    }
+    .loginlink{
+        text-decoration: none;
+        color: orange;
+        font-size: 20px;
     }
 }

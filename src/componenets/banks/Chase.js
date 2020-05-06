@@ -4,6 +4,7 @@ import {Link, Redirect}from'react-router-dom'
 import {connect} from 'react-redux'
 import Cards from '../Cards'
 import Form from '../Form'
+import './bankpoints.scss'
 
 
 class Chase extends Component{
@@ -12,7 +13,8 @@ class Chase extends Component{
         this.state={
             user:{},
             cards:[],
-            redirect:false
+            redirect:false,
+            totalpoints:0
         }
     }
     componentDidMount(){
@@ -26,6 +28,7 @@ class Chase extends Component{
                 this.setState({
                     cards:data
                 })
+                this.gettotalPoints()
             })
             .catch(err=>{
                 console.log('can not read cards')
@@ -62,6 +65,13 @@ class Chase extends Component{
             console.log('delete failed')
         })
     }
+    gettotalPoints=()=>{
+        let total = this.state.cards.reduce((acc,curr)=>{
+            return acc + parseInt(curr.points)
+        },0)
+        this.setState({totalpoints:total})
+    }
+
 
     render(){
         let{redirect} = this.state
@@ -75,8 +85,10 @@ class Chase extends Component{
             )
             return(
                 <div className='cardslists' >
-                Testing Chase
+                <h1 className='bp'>UR:{this.state.totalpoints}</h1>
+                <span>
                {mappedCards}
+                </span>
                 <Form addCards={this.addCards}/>
             </div>
         )
